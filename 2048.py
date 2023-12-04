@@ -1,5 +1,5 @@
 import random
-
+import os
 
 def board():
     issue = [
@@ -10,7 +10,6 @@ def board():
     ]
 
 def randomShots():
-
     random: int = [0,1,2,3,4,5,6,7,8,9]
     value: int = random.randint([])
     if value > 0:
@@ -31,3 +30,6 @@ def move(issue):
         elif button == "S":
             issue[n+10][1] = issue[n][1]+ issue[n+10][1]
 move()
+
+def game():
+    os.system("cls")
