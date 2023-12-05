@@ -32,8 +32,8 @@ def move(issue):
         if button == "D":
             while issue[i][n + k] == 0 and n + k < 3:
                 k += 1
-            issue[i][n + k] = issue[i][n]
-            issue[i][n] = 0
+            issue[n][n + k] = issue[i][n]
+            issue[n][n] = 0
         elif button == "Q":
             while issue[n - k] == 0 and n + k > -1:
                 k += 1
@@ -44,7 +44,7 @@ def move(issue):
                 k += 1
             issue[n - k] = issue[n]
             issue[n] = 0
-        elif button == "Q":
+        elif button == "S":
             while issue[n - k] == 0 and n + k > -1:
                 k += 1
             issue[n - k] = issue[n]
