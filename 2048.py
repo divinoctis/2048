@@ -2,8 +2,7 @@ import random
 import os
 
 def board():
-    issue = []
-
+    issue : list = []
     for i in range(0, 4):
         issue.append([0] * 4)
     return issue
@@ -21,31 +20,35 @@ def randomShots(issue):
 
 def displayBoard(issue):
     for row in issue:
-       print(row)
+        print(row)
 
 def move(issue):
     n: int = 0
+    k: int = 1
     button: str = None
     while button not in ["Q", "D", "S", "Z"]:
         button = input("left: Q / right: D / down: S / up: Z \n").upper()
     for i in range(3):
         if button == "D":
-            issue[n][1] = issue[n][1] + issue[n + 1][1]
+            while issue[n + k] == 0 and n + k < 3:
+                k += 1
+            issue[n + k] = issue[n]
+            issue[n] = 0
+           
         elif button == "Q":
-            issue[n + 1][1] = issue[n][1] + issue[n + 1][1]
-        elif button == "S":
-            issue[n + 10][1] = issue[n][1] + issue[n + 10][1]
-        elif button == "Z":
-            issue[n][1] = issue[n][1] + issue[n + 10][1]
-
-'''
-def fusion():
-'''
+            while issue[n - k] == 0 and n + k > -1:
+                k += 1
+            issue[n - k] = issue[n]
+            issue[n] = 0
 
 def game():
-    os.system("cls")
-    myBoard = board()
-    randomShots(myBoard)
-    displayBoard(myBoard)
+    endGame: bool = False
+    while endGame == False:
+        os.system("cls")
+        myBoard = board()
+        randomShots(myBoard)
+        displayBoard(myBoard)
+        move()
+
 
 game()
