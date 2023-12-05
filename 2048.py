@@ -30,11 +30,20 @@ def move(issue):
         button = input("left: Q / right: D / down: S / up: Z \n").upper()
     for i in range(3):
         if button == "D":
-            while issue[n + k] == 0 and n + k < 3:
+            while issue[i][n + k] == 0 and n + k < 3:
                 k += 1
-            issue[n + k] = issue[n]
+            issue[i][n + k] = issue[i][n]
+            issue[i][n] = 0
+        elif button == "Q":
+            while issue[n - k] == 0 and n + k > -1:
+                k += 1
+            issue[n - k] = issue[n]
             issue[n] = 0
-           
+        elif button == "Z":
+            while issue[n - k] == 0 and n + k > -1:
+                k += 1
+            issue[n - k] = issue[n]
+            issue[n] = 0
         elif button == "Q":
             while issue[n - k] == 0 and n + k > -1:
                 k += 1
@@ -42,13 +51,12 @@ def move(issue):
             issue[n] = 0
 
 def game():
-    endGame: bool = False
-    while endGame == False:
+    endGame = False
+    while not endGame:
         os.system("cls")
         myBoard = board()
         randomShots(myBoard)
         displayBoard(myBoard)
-        move()
-
+        move(myBoard)
 
 game()
