@@ -2,12 +2,12 @@ import random
 import os
 
 def board():
-    issue : list = []
+    grid : list = []
     for i in range(0, 4):
-        issue.append([0] * 4)
-    return issue
+        grid.append([0] * 4)
+    return grid
 
-def randomShots(issue):
+def randomShots(grid):
     for i in range(2):
         valueRandom: int = random.randint(0,9)
         if valueRandom > 0:
@@ -16,13 +16,22 @@ def randomShots(issue):
             value: int = 4
         i : int = random.randint(0,3)
         j : int = random.randint(0,3)
-        issue[i][j] = value
+        grid[i][j] = value
 
-def displayBoard(issue):
-    for row in issue:
+def displayBoard(grid):
+    for row in grid:
         print(row)
 
-def move(issue):
+def merge():
+    
+
+def move_left(grid):
+    
+
+    pass
+
+'''
+def move(grid):
     n: int = 0
     k: int = 1
     button: str = None
@@ -30,25 +39,26 @@ def move(issue):
         button = input("left: Q / right: D / down: S / up: Z \n").upper()
     for i in range(3):
         if button == "D":
-            while issue[i][n + k] == 0 and n + k < 3:
+            while grid[i][n + k] == 0 and n + k < 3:
                 k += 1
-            issue[n][n + k] = issue[i][n]
-            issue[n][n] = 0
+            grid[n][n + k] = grid[i][n]
+            grid[n][n] = 0
         elif button == "Q":
-            while issue[n - k] == 0 and n + k > -1:
+            while grid[n - k] == 0 and n + k > -1:
                 k += 1
-            issue[n - k] = issue[n]
-            issue[n] = 0
+            grid[n - k] = grid[n]
+            grid[n] = 0
         elif button == "Z":
-            while issue[n - k] == 0 and n + k > -1:
+            while grid[n - k] == 0 and n + k > -1:
                 k += 1
-            issue[n - k] = issue[n]
-            issue[n] = 0
+            grid[n - k] = grid[n]
+            grid[n] = 0
         elif button == "S":
-            while issue[n - k] == 0 and n + k > -1:
+            while grid[n - k] == 0 and n + k > -1:
                 k += 1
-            issue[n - k] = issue[n]
-            issue[n] = 0
+            grid[n - k] = grid[n]
+            grid[n] = 0
+'''
 
 def game():
     endGame = False

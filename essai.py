@@ -1,14 +1,4 @@
-grid: list[int] = [0, 0, 2, 2, 4, 5, 7]
-
-print(grid[0])
-print(grid[1])
-print(grid[2])
-print(grid[3])
-
-print("Bonjour")
-print("Bonjour")
-print("Bonjour")
-print("Bonjour")
+grid: list[int] = [0, 0, 2, 5, 2]
 
 def PrintGrid(grid):
     i = 0
@@ -19,23 +9,11 @@ def PrintGrid(grid):
 def HasNumber4(grid) -> bool:
     number4: bool = False
     i: int = 0
-    while number4 == False:
+    size: int = len(grid)
+    while i < size:
         if grid[i] == 4:
-            number4 == True
+            return True
         else:
             i += 1
-
-
-
-
-
-
-
-def move_left(grid):
     
-
-    pass
-
-move_left(grid)
-    
-print(grid)
+HasNumber4(grid)
