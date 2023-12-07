@@ -12,13 +12,17 @@ def move_left(grid):
     n : int = 0
     k: int = 1
     if direction == "Q":
-        while grid[n+k] == 0:
-            k += 1
-        grid[n] = grid[n + k]
-        grid[n + k] = 0
-        k = 0
-        n += 1
-        pass
+        while n < len(grid):
+            while n+k < len(grid) and grid[n+k] == 0:
+                k += 1
+
+            if n+k < len(grid):
+                grid[n] = grid[n + k]
+                grid[n + k] = 0
+
+            k = 1
+            n += 1
+            
 
 print(grid)
 move_left(grid)

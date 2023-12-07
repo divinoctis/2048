@@ -22,7 +22,7 @@ def displayBoard(grid):
     for row in grid:
         print(row)
         
-
+'''
 def merge():
     
 
@@ -30,7 +30,7 @@ def move_left(grid):
     
 
     pass
-
+'''
 
 def move(grid):
     n: int = 0
