@@ -1,19 +1,13 @@
 import random
 import os
 
+# repris par chatgpt en partant de notre code de base
+
 def board():
     grid = []
     for i in range(0, 4):
         grid.append([0] * 4)
     return grid
-
-# fonction à modifier pour rendre robuste le jeu
-def ask_input(sMessage: str, char_auto: list[str]) -> str:
-    while True:
-        Input: str = input(sMessage).lower()
-        if Input in char_auto:
-            return str(Input)
-        print("Ce n'est pas une réponse valable.")
 
 def randomShots(grid):
     for i in range(2):
