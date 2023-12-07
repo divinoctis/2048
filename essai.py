@@ -15,5 +15,5 @@ def HasNumber4(grid) -> bool:
             return True
         else:
             i += 1
-    
+
 HasNumber4(grid)
