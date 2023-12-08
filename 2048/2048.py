@@ -122,7 +122,7 @@ def move(grid, direction):
                             grid[n + 1][i] *= 2
                             grid[n][i] = 0
                 n -= 1
-        elif direction == "X":
+        elif direction == "X": #juste pour sortir du jeu sans avoir à perdre ou gagner
             grid[0][0] = 2048
 
         i+=1
@@ -135,6 +135,9 @@ def checkLoose(grid,direction):
             if value == 0:
                 return False
     
+    '''va regarder a l'avance le tableau en fonction de toute les directions possible
+    et le comparé au tableau initial afin de voir si quoique l'on fasse il ne se modifie 
+    pas et donc nous prouve que le joueur est bloqué et donc à perdu'''
     checkGrid = grid
     direction == "Z"
     move(checkGrid, direction)
